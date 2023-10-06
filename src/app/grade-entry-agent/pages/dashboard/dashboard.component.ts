@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild, OnInit } from '@angular/core';
+
+import * as fastcsv from 'fast-csv';
+
 import {
   ApexChart,
   ChartComponent,
@@ -16,6 +19,7 @@ import {
   ApexResponsive,
 } from 'ng-apexcharts';
 import { GradeEntryAgentServiceService } from 'src/app/services/grade-entry-agent-service.service';
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
 interface month {
   value: string;
   viewValue: string;
@@ -186,6 +190,50 @@ export class AppDashboardComponent implements OnInit {
 
   data : any;
   percentage = 10;
+
+
+
+  // Modify saveDataAsCSV to accept a 2D array of data
+saveDataAsCSV(data: any[][]): void {
+  // Convert the 2D array to a CSV string
+  const csvData = data.map((row) => row.join(','));
+
+  // Convert the CSV string to a Blob
+  const blob = new Blob([csvData.join('\n')], { type: 'text/csv' });
+
+  // Create a download link and trigger the download
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'classment.csv';
+  a.click();
+  window.URL.revokeObjectURL(url);
+}
+
+getClassmentAsCSV(): void {
+  this.gradeEntryAgentService.getClassment().subscribe(
+    (response) => {
+      console.log('classement:', response);
+
+      // Extract the necessary data from the API response
+      const dataToSave = response.map((item: { classement: any; prenom: any; nom: any; cne: any; email: any; }) => [
+        item.classement,
+        item.prenom || '',
+        item.nom || '',
+        item.cne || '',
+        item.email || '',
+      ]);
+
+      // Call saveDataAsCSV with the extracted data
+      this.saveDataAsCSV(dataToSave);
+    },
+    (error) => {
+      console.error('Error getting classment:', error);
+    }
+  );
+}
+
+  
 
   
 

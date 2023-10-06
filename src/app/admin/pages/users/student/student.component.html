@@ -18,12 +18,70 @@
       <a href="admin/users/add-student" class="btn btn-primary">Ajouter un étudiant</a>
     </div>
   </div>
+
+  <div class="card-body p-4">
+    <h5 class="card-title fw-semibold mb-4">Création automatique des comptes </h5>
+    <form >
+      <div class="mb-3">
+        <label for="csvFile" class="form-label btn btn-success" >
+          <i-tabler name="file-upload" class="icon-16"></i-tabler> Sélectionnez un fichier CSV
+        </label>
+        <input
+          type="file"
+          class="form-control"
+          id="csvFile"
+          (change)="handleFileInput($event)"
+        />
+      </div>
+    </form>
+   <div *ngIf="estCSVfound" >
+    <button class="btn btn-primary mb-0 fw-normal" (click)="createAllAccountsATOnce()">
+      <i-tabler name="file-upload" class="icon-16"></i-tabler>  Créer
+    </button>
+  </div>
+  <br> <p *ngIf="messageSuccess"  class="alert alert-success">
+    {{ messageSuccess }}
+  </p>
+
+  <p *ngIf="message" class="alert alert-danger">
+    {{ message }}
+  </p>
 </div>
 
 <div class="col-lg-12" style="margin-top: 40px;">
   <div class="card w-100">
     <div class="card-body p-4">
       <h5 class="card-title fw-semibold mb-4">Les Profils non encore validés</h5>
+
+      <div class="card-body p-4">
+        <h5 class="card-title fw-semibold mb-4">Validation automatique des profils </h5>
+        <form >
+          <div class="mb-3">
+            <label for="csvFile2" class="form-label btn "  style="background-color: rgb(255, 60, 0); color: white;">
+              <i-tabler name="file-upload" class="icon-16"></i-tabler> Sélectionnez un fichier CSV des CIN
+            </label>
+            <input
+              type="file"
+              class="form-control"
+              id="csvFile2"
+              (change)="handleFileInput2($event)"
+            />
+          </div>
+        </form>
+       <div *ngIf="estCSVfound2" >
+        <button class="btn  mb-0 fw-normal" style="background-color: rgb(255, 0, 140); color: white;" (click)="validateAllAccountsATOnce()">
+          <i-tabler name="circle-check" class="icon-16"></i-tabler>  Valider
+        </button>
+      </div>
+      <br> <p *ngIf="messageSuccess2"  class="alert alert-success">
+        {{ messageSuccess2 }}
+      </p>
+    
+      <p *ngIf="message2" class="alert alert-danger">
+        {{ message2 }}
+      </p>
+    </div>
+    <br>
       
       <div class="table-responsive">
         <table class="table text-nowrap mb-0 align-middle">

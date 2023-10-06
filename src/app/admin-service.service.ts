@@ -148,6 +148,26 @@ export class AdminServiceService {
     return this.http.post(this.baseUrl + `validate/${studentId}`, {}, options);
   }
 
+  validateFromCIN(username: string) {
+    let token = '';
+    const userString = localStorage.getItem('user');
+  
+    if (userString) {
+      const user = JSON.parse(userString);
+      token = user['token'];
+    }
+  
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    
+    // Pass the headers as options
+    const options = { headers };
+  
+    // Send a POST request to the API with the username as a parameter
+    return this.http.post(this.baseUrl + `validate?username=${username}`, {}, options);
+
+}
+
+
 
 
 

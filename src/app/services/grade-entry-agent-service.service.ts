@@ -211,4 +211,21 @@ export class GradeEntryAgentServiceService {
     // Assuming your Spring Boot API endpoint for submitting notes is '/api/submit-notes'
     return this.http.get(`${this.baseUrl}notes/${id}`,  { headers });
   }
+
+  getClassment(): Observable<any> {
+    let token = '';
+    const userString = localStorage.getItem('user');
+
+    if (userString) {
+      const user = JSON.parse(userString);
+      token = user['token'];
+    }
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token // Replace 'authToken' with your actual authentication token
+    });
+
+    // Assuming your Spring Boot API endpoint for submitting notes is '/api/submit-notes'
+    return this.http.get(`${this.baseUrl}classement`,  { headers });
+  }
 }

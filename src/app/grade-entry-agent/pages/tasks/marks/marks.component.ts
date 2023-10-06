@@ -18,6 +18,7 @@ export class MarksComponent {
     subjects: any[];
     message = ""
     messageSuccess = ""
+    estCSVfound = '';
 
     dataToSend : { [key: string]: { [subject: string]: number } } = {};
 
@@ -105,7 +106,7 @@ export class MarksComponent {
     }
     
 
-  estCSVfound = '';
+  
 
   filieres: any[]; // 
   centres: any[]; // 
