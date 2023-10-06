@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <div class="progress mb-3">
+        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Étape 4/5</div>
+    </div>
+
+    <form action="POST" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>Participations antérieures</h3>
+        </div>
+        <div class="card-body">
+            <h4>1ère Participation antérieure au CNC 2024</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="annee1">Année</label>
+
+                    <select id="annee1" class="form-control" name="annee1Participation" matInput [(ngModel)]="dossier.annee1Participation">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <!-- ... Other years ... -->
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="typeCandidature1">Type de candidature</label>
+                    <select id="typeCandidature1" class="form-control" name="typeDe1candidature" matInput [(ngModel)]="dossier.typeDe1candidature">
+                        <option value="regulier">Régulier</option>
+                        <option value="libre">Libre</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+            </div>
+            <br>
+            <h4>2ème Participation antérieure au CNC 2024</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="annee2">Année</label>
+                    <select id="annee2" class="form-control" name="annee2Participation" matInput [(ngModel)]="dossier.annee2Participation">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <!-- ... Other years ... -->
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="typeCandidature2">Type de candidature</label>
+                    <select id="typeCandidature2" class="form-control" name="typeDe2candidature" matInput [(ngModel)]="dossier.typeDe2candidature">
+                        <option value="regulier">Régulier</option>
+                        <option value="libre">Libre</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card-footer" style="margin-bottom: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-secondary mt-3" style="margin-right: 20px;"
+                        ><a style="text-decoration: none;
+                        color: white;" href="student/inscription-ecrit/3">Précédant</a></button>
+                <button type="submit" class="btn btn-primary mt-3" >Suivant</button>
+            </div>
+            
+        </div>
+    </div>
+
+</form>
+    
+</div>
+
+

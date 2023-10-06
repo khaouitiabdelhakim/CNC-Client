@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card shadow rounded-lg">
+    <div class="card-body">
+      <div class="container">
+        <h2 class="mb-4">Entrer les notes pour <span class="badge bg-primary">{{ student.username }}</span></h2>
+        <!-- Display success message when form is successfully submitted -->
+        <div *ngIf="successMessage" class="alert alert-success mb-3">
+          {{ successMessage }}
+        </div>
+        
+        <!-- Display error message when there is a submission error -->
+        <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+          {{ errorMessage }}
+        </div>
+        
+        <form (ngSubmit)="onSubmit()">
+          <div *ngFor="let subject of subjects; let i = index" class="mb-3">
+              <label [for]="'subject' + i" class="form-label"> <i-tabler name="school" class="icon-16"></i-tabler>  {{ subject.matiere }} :</label>
+            <input
+              type="number"
+              class="form-control"
+              name="subject.matiere"
+              [(ngModel)]="formData[subject.matiere]"
+              step="0.01"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary"> <i-tabler name="file-upload" class="icon-16"></i-tabler>  Soumettre</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

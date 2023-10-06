@@ -1,0 +1,95 @@
+<div class="container mt-5">
+    <div class="progress mb-3">
+        <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Étape 2/5</div>
+    </div>
+
+    <form action="POST" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    
+    <div class="card">
+        <div class="card-header">
+            <h3>Formation 1</h3>
+        </div>
+       
+        <div class="card-body">
+            <h4>Baccalauréat</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="anneeBac">Année</label>
+                    <select id="anneeBac" class="form-control" name="anneeBac" matInput [(ngModel)]="dossier.anneeBac" >
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <!-- ... Other years ... -->
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="serieBac">Série de bac</label>
+                    <input type="text" id="serieBac" class="form-control" name="serieBac" matInput [(ngModel)]="dossier.serieBac">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="typeBac">Type de bac</label>
+                    <select id="typeBac" class="form-control"  name="typeBac" matInput [(ngModel)]="dossier.typeBac" >
+                        <option value="Bac1">Bac1</option>
+                        <option value="Bac2">Bac2</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="moyenneBac">Moyenne</label>
+                    <input type="number" id="moyenneBac" class="form-control" name="moyenne" matInput [(ngModel)]="dossier.moyenne">
+                </div>
+            </div>
+            <br>
+            <h4>CPGE</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="filiereCPGE">Filière</label>
+                    <select id="filiereCPGE" class="form-control" name="filiere" matInput [(ngModel)]="dossier.filiere">
+                        <option  *ngFor="let filiere of filieres" [value]="filiere.id">{{filiere.name}}</option>
+                    </select>
+                </div>                
+                <div class="col-md-6">
+                    <label for="centreCpge">Centre CPGE</label>
+                    <select id="centreCpge" class="form-control" name="centreCpge" matInput [(ngModel)]="dossier.centreCpge">
+                        <option  *ngFor="let centre of centres" [value]="centre.id">{{centre.nom}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="classeCPGE">Classe</label>
+                    <input type="text" id="classeCPGE" class="form-control" placeholder="Classe: MP-1 ou MP-3 .." name="classe" matInput [(ngModel)]="dossier.classe">
+                </div>
+                <div class="col-md-6">
+                    <label for="situationCPGE">Situation</label>
+                    <select id="situationCPGE" class="form-control" name="situation" matInput [(ngModel)]="dossier.situation">
+                        <option value="2/3">2/3</option>
+                        <option value="5/3">5/3</option>
+                        <option value="7/3">7/3</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card-footer" style="margin-bottom: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-secondary mt-3" style="margin-right: 20px;"
+                        ><a style="text-decoration: none;
+                        color: white;" href="student/inscription-ecrit/1">Précédant</a></button>
+                 <button type="submit" class="btn btn-primary mt-3" >Suivant</button>
+            </div>
+            
+        </div>
+    </div>
+
+</form>
+    
+</div>
+
+

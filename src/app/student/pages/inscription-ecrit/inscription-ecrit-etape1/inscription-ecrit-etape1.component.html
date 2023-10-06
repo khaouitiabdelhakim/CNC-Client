@@ -1,0 +1,109 @@
+<div class="container mt-5">
+    <div class="progress mb-3">
+        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Étape 1/5</div>
+    </div>
+    <form action="POST" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="card">
+        <div class="card-header">
+            <h3>Entrez vos informations personnelles</h3>
+        </div>
+        
+          
+        <div class="container mt-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom"  class="form-control" name="nom" matInput [(ngModel)]="dossier.nom">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" matInput [(ngModel)]="dossier.telephone" class="form-control">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" class="form-control" 
+                        name="prenom" matInput [(ngModel)]="dossier.prenom">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" class="form-control"
+                        name="adresse" matInput [(ngModel)]="dossier.adresse">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control"
+                        name="email" matInput [(ngModel)]="dossier.email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lienNaissance">Lien De Naissance</label>
+                        <input type="text" id="lienNaissance" class="form-control"
+                        name="lienDeNaissance" matInput [(ngModel)]="dossier.lieuDeNaissance" >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="cin">CIN</label>
+                        <input type="text" id="cin" class="form-control" 
+                        name="cin" matInput [(ngModel)]="dossier.cin" >
+                    </div>
+                    <div class="col-md-6">
+                        <label>CNE</label>
+                        <input type="text" class="form-control" 
+                        name="cne" matInput [(ngModel)]="dossier.cne" >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label style="margin-right: 10px;">Sexe</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="masculin" value="masculin" name="genre" [(ngModel)]="dossier.genre">
+                            <label class="form-check-label" for="masculin">
+                                Masculin
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="feminin" value="feminin" name="genre" [(ngModel)]="dossier.genre">
+                            <label class="form-check-label" for="feminin">
+                                Féminin
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <label for="dateDeNaissance">Date de naissance</label>
+                        <input type="date" id="dateDeNaissance" class="form-control"
+                        name="dateDeNaissance" matInput [(ngModel)]="dossier.dateDeNaissance">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="nationalite">Nationalité</label>
+                        <select id="nationalite" class="form-control"  name="nationalite" matInput [(ngModel)]="dossier.nationalite">
+                            <option value="marocaine">Marocaine</option>
+                            <option value="francaise">Française</option>
+                            <option value="algerienne">Algérienne</option>
+                            <!-- ... Autres nationalités ... -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="card-footer" style="margin-bottom: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary mt-3">Suivant</button>
+            </div>
+            
+        </div>
+    </div>
+
+</form>
+    
+</div>
+
+

@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <div class="progress mb-3">
+        <div class="progress-bar" role="progressbar" style="width: 66%;" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100">Étape 2/3</div>
+    </div>
+    
+
+    <form action="POST" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="card">
+        <div class="card-header">
+            <h3>Etape 2 TIPE</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="titre1">Postitionnements Thématiques</label>
+                    <input type="text" id="titre1" class="form-control" name="titreTIPE" matInput [(ngModel)]="dossier.titreTIPE">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="motivation">Résumé (50 mots maximum)</label>
+                    <textarea id="motivation" class="form-control" rows="3" maxlength="50" name="motivationTIPE" matInput [(ngModel)]="dossier.motivationTIPE"></textarea>
+                    <p class="text-muted">il vous reste <span id="motivationCounter">50</span> mots</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="ancrage">MCOT (650 mots maximum)</label>
+                    <textarea id="ancrage" class="form-control" rows="3" maxlength="50" name="ancrageTIPE" matInput [(ngModel)]="dossier.ancrageTIPE"></textarea>
+                    <p class="text-muted">il vous reste <span id="ancrageCounter">50</span> mots</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="titre2">Mots Clés</label>
+                    <input type="text" id="encadrant" class="form-control" name="encadrantTIPE" matInput [(ngModel)]="dossier.encadrantTIPE">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="card-footer" style="margin-bottom: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-secondary mt-3" style="margin-right: 20px;"
+                        ><a style="text-decoration: none;
+                        color: white;" href="student/inscription-oral/1">Précédant</a></button>
+                <button type="submit" class="btn btn-primary mt-3" >Suivant</button>
+            </div>
+            
+        </div>
+    </div>
+
+</form>
+    
+</div>
+
+

@@ -1,0 +1,26 @@
+<p>Ensemble de notices!</p>
+<br>
+<div class="row">
+
+    <!-- Notice 1 -->
+    <div *ngFor="let notice of notices"  class="col-lg-3 col-sm-6">
+      <mat-card class="cool-card">
+        <mat-card-content class="cool-card-content">
+          <mat-card-title>CNC 2024</mat-card-title>
+          <div class="cool-card-details">
+            <h6 class="cool-card-subtitle">{{ notice.titre }}</h6>
+            <div class="cool-card-image">
+              <img src="http://localhost:8081/api/general/files/{{ notice.coverUrl }}" alt="PDF Icon" height="160px">
+            </div>
+            <div class="cool-card-download-button">
+              <!-- Add a click event to the button -->
+              <button class="cool-button" (click)="updateNotice(notice.pdfUrl )"><i-tabler name="edit-circle" class="icon-16"></i-tabler> Editer</button>
+
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+

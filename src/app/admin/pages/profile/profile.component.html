@@ -1,0 +1,64 @@
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    
+      <!-- the side bar -->
+     
+
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!-- the header -->
+  
+
+      <div class="container-fluid">
+        <!--  Row 1 -->
+        <div class="card-body">
+  <h5 class="card-title fw-semibold mb-4">Mon profil</h5>
+  <div class="card">
+    <div class="card-body">
+      <div *ngIf="registrationSucces"  class="alert alert-success">
+        {{ registrationSucces }}
+      </div>
+
+      <div *ngIf="registrationError" class="alert alert-danger">
+        {{ registrationError }}
+      </div>
+        
+  
+        <form  >
+        <input type="hidden" name="_token"/>
+          <div class="mb-3">
+            <label for="nomEtudiant" class="form-label">CIN</label>
+            <input name="cin" type="text" class="form-control" id="cin" >
+          </div>
+          <div class="mb-3">
+            <label for="emailMembres" class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" id="email" >
+          </div>
+         
+        
+          <div class="mb-3">
+            <label for="profPassword" class="form-label">Mot de passe</label>
+            <div class="input-group">
+              <input name="password" type="password" class="form-control" id="password"  >
+  
+              <button type="button" class="btn btn-secondary" (click)="generatePassword()">Générer</button>
+          
+              <button type="button" class="btn btn-outline-secondary" (click)="togglePasswordVisibility()">
+                
+                <i id="passwordVisibilityIcon" class="fa fa-eye-slash"></i> <!-- FontAwesome "eye-slash" icon -->
+              </button>
+              
+            </div>
+          </div>
+          
+          
+          <button type="submit" class="btn btn-warning">Sauvegarder</button>
+          
+        </form>
+    </div>
+  </div>
+</div>
+
+
+</div>
+

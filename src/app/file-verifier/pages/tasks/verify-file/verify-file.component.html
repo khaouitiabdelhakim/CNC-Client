@@ -1,0 +1,379 @@
+<div class="container mt-5">
+    
+    <div class="card">
+        <div class="container mt-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom"  class="form-control" name="nom" matInput [(ngModel)]="dossier.nom">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" matInput [(ngModel)]="dossier.telephone" class="form-control">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" class="form-control" 
+                        name="prenom" matInput [(ngModel)]="dossier.prenom">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" class="form-control"
+                        name="adresse" matInput [(ngModel)]="dossier.adresse">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control"
+                        name="email" matInput [(ngModel)]="dossier.email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lienNaissance">Lien De Naissance</label>
+                        <input type="text" id="lienNaissance" class="form-control"
+                        name="lienDeNaissance" matInput [(ngModel)]="dossier.lieuDeNaissance" >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="cin">CIN</label>
+                        <input type="text" id="cin" class="form-control" 
+                        name="cin" matInput [(ngModel)]="dossier.cin" >
+                    </div>
+                    <div class="col-md-6">
+                        <label>CNE</label>
+                        <input type="text" class="form-control" 
+                        name="cne" matInput [(ngModel)]="dossier.cne" >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label style="margin-right: 10px;">Sexe</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="masculin" value="masculin" name="genre" [(ngModel)]="dossier.genre">
+                            <label class="form-check-label" for="masculin">
+                                Masculin
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="feminin" value="feminin" name="genre" [(ngModel)]="dossier.genre">
+                            <label class="form-check-label" for="feminin">
+                                Féminin
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <label for="dateDeNaissance">Date de naissance</label>
+                        <input type="date" id="dateDeNaissance" class="form-control"
+                        name="dateDeNaissance" matInput [(ngModel)]="dossier.dateDeNaissance">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="nationalite">Nationalité</label>
+                        <select id="nationalite" class="form-control"  name="nationalite" matInput [(ngModel)]="dossier.nationalite">
+                            <option value="marocaine">Marocaine</option>
+                            <option value="francaise">Française</option>
+                            <option value="algerienne">Algérienne</option>
+                            <!-- ... Autres nationalités ... -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="card-body">
+            <h4>Baccalauréat</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="anneeBac">Année</label>
+                    <select id="anneeBac" class="form-control" name="anneeBac" matInput [(ngModel)]="dossier.anneeBac" >
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <!-- ... Other years ... -->
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="serieBac">Série de bac</label>
+                    <input type="text" id="serieBac" class="form-control" name="serieBac" matInput [(ngModel)]="dossier.serieBac">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="typeBac">Type de bac</label>
+                    <select id="typeBac" class="form-control"  name="typeBac" matInput [(ngModel)]="dossier.typeBac" >
+                        <option value="Bac1">Bac1</option>
+                        <option value="Bac2">Bac2</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="moyenneBac">Moyenne</label>
+                    <input type="number" id="moyenneBac" class="form-control" name="moyenne" matInput [(ngModel)]="dossier.moyenne">
+                </div>
+            </div>
+            <br>
+            <h4>CPGE</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="filiereCPGE">Filière</label>
+                    <select id="filiereCPGE" class="form-control" name="filiere" matInput [(ngModel)]="dossier.filiere">
+                        <option  *ngFor="let filiere of filieres" [value]="filiere.id">{{filiere.name}}</option>
+                    </select>
+                </div>                
+                <div class="col-md-6">
+                    <label for="centreCpge">Centre CPGE</label>
+                    <select id="centreCpge" class="form-control" name="centreCpge" matInput [(ngModel)]="dossier.centreCpge">
+                        <option  *ngFor="let centre of centres" [value]="centre.id">{{centre.nom}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="classeCPGE">Classe</label>
+                    <input type="text" id="classeCPGE" class="form-control" placeholder="Classe: MP-1 ou MP-3 .." name="classe" matInput [(ngModel)]="dossier.classe">
+                </div>
+                <div class="col-md-6">
+                    <label for="situationCPGE">Situation</label>
+                    <select id="situationCPGE" class="form-control" name="situation" matInput [(ngModel)]="dossier.situation">
+                        <option value="2/3">2/3</option>
+                        <option value="5/3">5/3</option>
+                        <option value="7/3">7/3</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <h6>1ère année des CPGE</h6>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="annee1">Année</label>
+                    <select id="annee1" class="form-control" name="annee1cpge" matInput [(ngModel)]="dossier.annee1cpge">
+                        <option value="2022">2024</option>
+                        <option value="2021">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2000">2020</option>
+                        <option value="2022">2019</option>
+                        <option value="2021">2018</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filiere1">Filière</label>
+                    <select id="filiere1" class="form-control" name="filiere1cpge" matInput [(ngModel)]="dossier.filiere1cpge">
+                        <option  *ngFor="let filiere of filieres" [value]="filiere.id">{{filiere.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="centreCPGE1">Centre CPGE</label>
+                    <select id="centreCPGE1" class="form-control" name="centreCpge1cpge" matInput [(ngModel)]="dossier.centreCpge1cpge">
+                        <option  *ngFor="let centre of centres" [value]="centre.id">{{centre.nom}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="classe1">Classe</label>
+                    <input type="text" id="classe1" class="form-control" name="classe1cpge" matInput [(ngModel)]="dossier.classe1cpge">
+                </div>
+            </div>
+            <br>
+            <h6>2ème année des CPGE</h6>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="annee2">Année</label>
+                    <select id="annee2" class="form-control" name="annee2cpge" matInput [(ngModel)]="dossier.annee2cpge">
+                        <option value="2022">2024</option>
+                        <option value="2021">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2000">2020</option>
+                        <option value="2022">2019</option>
+                        <option value="2021">2018</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filiere2">Filière</label>
+                    <select id="filiere2" class="form-control" name="filiere2cpge" matInput [(ngModel)]="dossier.filiere2cpge">
+                        <option  *ngFor="let filiere of filieres" [value]="filiere.id">{{filiere.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="centreCPGE2">Centre CPGE</label>
+                    <select id="centreCPGE2" class="form-control" name="centreCpge2cpge" matInput [(ngModel)]="dossier.centreCpge2cpge">
+                        <option  *ngFor="let centre of centres" [value]="centre.id">{{centre.nom}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="classe2">Classe</label>
+                    <input type="text" id="classe2" class="form-control" name="classe2cpge" matInput [(ngModel)]="dossier.classe2cpge">
+                </div>
+            </div>
+            <br>
+            <p class="text-danger mt-2">Cette section est réservée aux 5/2 et 7/2</p>
+            <h6>(1)</h6>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="annee3">Année</label>
+                    <select id="annee3" class="form-control" name="annee3cpge" matInput [(ngModel)]="dossier.annee3cpge">
+                        <option value="2022">2024</option>
+                        <option value="2021">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2000">2020</option>
+                        <option value="2022">2019</option>
+                        <option value="2021">2018</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filiere3">Filière</label>
+                    <select id="filiere3" class="form-control" name="filiere3cpge" matInput [(ngModel)]="dossier.filiere3cpge">
+                        <option  *ngFor="let filiere of filieres" [value]="filiere.id">{{filiere.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="centreCPGE3">Centre CPGE</label>
+                    <select id="centreCPGE3" class="form-control" name="centreCpge3cpge" matInput [(ngModel)]="dossier.centreCpge3cpge">
+                        <option  *ngFor="let centre of centres" [value]="centre.id">{{centre.nom}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="classe3">Classe</label>
+                    <input type="text" id="classe3" class="form-control" name="classe3cpge" matInput [(ngModel)]="dossier.classe3cpge">
+                </div>
+            </div>
+            <br>
+            <h6>(2)</h6>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="annee4">Année</label>
+                    <select id="annee4" class="form-control" name="annee4cpge" matInput [(ngModel)]="dossier.annee4cpge">
+                        <option value="2022">2024</option>
+                        <option value="2021">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2000">2020</option>
+                        <option value="2022">2019</option>
+                        <option value="2021">2018</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="filiere4">Filière</label>
+                    <select id="filiere4" class="form-control" name="filiere4cpge" matInput [(ngModel)]="dossier.filiere4cpge">
+                        <option  *ngFor="let filiere of filieres" [value]="filiere.id">{{filiere.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="centreCPGE4">Centre CPGE</label>
+                    <select id="centreCPGE4" class="form-control" name="centreCpge4cpge" matInput [(ngModel)]="dossier.centreCpge4cpge">
+                        <option  *ngFor="let centre of centres" [value]="centre.id">{{centre.nom}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="classe4">Classe</label>
+                    <input type="text" id="classe4" class="form-control" name="classe4cpge" matInput [(ngModel)]="dossier.classe4cpge">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <h4>1ère Participation antérieure au CNC 2024</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="annee1">Année</label>
+
+                    <select id="annee1" class="form-control" name="annee1Participation" matInput [(ngModel)]="dossier.annee1Participation">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <!-- ... Other years ... -->
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="typeCandidature1">Type de candidature</label>
+                    <select id="typeCandidature1" class="form-control" name="typeDe1candidature" matInput [(ngModel)]="dossier.typeDe1candidature">
+                        <option value="regulier">Régulier</option>
+                        <option value="libre">Libre</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+            </div>
+            <br>
+            <h4>2ème Participation antérieure au CNC 2024</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="annee2">Année</label>
+                    <select id="annee2" class="form-control" name="annee2Participation" matInput [(ngModel)]="dossier.annee2Participation">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <!-- ... Other years ... -->
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="typeCandidature2">Type de candidature</label>
+                    <select id="typeCandidature2" class="form-control" name="typeDe2candidature" matInput [(ngModel)]="dossier.typeDe2candidature">
+                        <option value="regulier">Régulier</option>
+                        <option value="libre">Libre</option>
+                        <!-- ... Other options ... -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="titre1">Titre</label>
+                    <input type="text" id="titre1" class="form-control" name="titreTIPE" matInput [(ngModel)]="dossier.titreTIPE">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="motivation">Motivation (50 mots maximum)</label>
+                    <textarea id="motivation" class="form-control" rows="3" maxlength="50" name="motivationTIPE" matInput [(ngModel)]="dossier.motivationTIPE"></textarea>
+                    <p class="text-muted">il vous reste <span id="motivationCounter">50</span> mots</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="ancrage">Ancrage (50 mots maximum)</label>
+                    <textarea id="ancrage" class="form-control" rows="3" maxlength="50" name="ancrageTIPE" matInput [(ngModel)]="dossier.ancrageTIPE"></textarea>
+                    <p class="text-muted">il vous reste <span id="ancrageCounter">50</span> mots</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="titre2">Encadrant</label>
+                    <input type="text" id="encadrant" class="form-control" name="encadrantTIPE" matInput [(ngModel)]="dossier.encadrantTIPE">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-muted">les candidats libres sont autorisés à ne pas mentionner l'encadrant</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="card-footer" style="margin-bottom: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <form action="POST" (ngSubmit)="validateDossier()">
+                    <button  type="submit" class="btn btn-success mt-3" style="margin-left: 20px; margin-right: 20px;">Valider Ce Dossier <i-tabler name="checks" class="icon-16"></i-tabler></button>
+                </form>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,59 @@
+/* Apply styles to the outer mat-card container */
+.cool-card {
+    width: 100%; /* Adjust the card width as needed */
+    margin: 20px 0; /* Add margin for spacing */
+    background-color: #fff; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.2s; /* Add a subtle hover effect */
+  
+    /* Center the card horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Apply styles to the card content */
+  .cool-card-content {
+    padding: 16px; /* Add padding inside the card */
+  }
+  
+  /* Style the card title */
+  mat-card-title {
+    font-size: 24px; /* Title font size */
+    font-weight: bold; /* Title font weight */
+    margin-bottom: 16px; /* Spacing below the title */
+  }
+  
+  /* Style the card subtitle */
+  .cool-card-subtitle {
+    font-size: 16px; /* Subtitle font size */
+    font-weight: bold; /* Subtitle font weight */
+  }
+  
+  /* Style the card image */
+  .cool-card-image {
+    margin-top: 16px; /* Spacing above the image */
+  }
+  
+  /* Style the download button */
+  .cool-card-download-button {
+    margin-top: 16px; /* Spacing above the button */
+  }
+  
+  /* Style the button */
+  .cool-button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add padding to the button */
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  /* Hover effect for the button */
+  .cool-button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+  }
+  

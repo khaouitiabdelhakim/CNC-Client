@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Ajouter une nouvelle notice</h4>
+          </div>
+          <div class="card-body">
+            <form enctype="multipart/form-data">
+                <!-- Titre de la notice -->
+                <div class="form-group">
+                  <label for="noticeTitle">Titre de la notice</label>
+                  <input type="text" class="form-control" id="noticeTitle" #titleInput required>
+                </div>
+                <br>
+              
+                <!-- Upload de la photo de couverture -->
+                <div class="form-group">
+                  <i-tabler name="file" class="icon-16"></i-tabler>
+                  <label for="coverPhoto">Upload de la photo de couverture</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="coverPhoto" #coverPhotoInput accept="image/*" required>
+                    <label class="custom-file-label" for="coverPhoto">Choisir un fichier</label>
+                  </div>
+                </div>
+                <br>
+              
+                <!-- Upload du PDF -->
+                <div class="form-group">
+                  <i-tabler name="file-text" class="icon-16"></i-tabler> 
+                  <label for="pdfFile">Upload du PDF</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="pdfFile" #pdfFileInput accept=".pdf" required>
+                    <label class="custom-file-label" for="pdfFile">Choisir un fichier PDF</label>
+                  </div>
+                </div>
+                <br>
+                <br>
+              
+                <!-- Bouton de soumission -->
+                <div class="form-group text-center">
+                  <button class="btn btn-primary" (click)="uploadFile(coverPhotoInput, pdfFileInput, titleInput.value)"><i-tabler name="upload" class="icon-16"></i-tabler>  Ajouter la notice</button>
+                </div>
+              </form>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

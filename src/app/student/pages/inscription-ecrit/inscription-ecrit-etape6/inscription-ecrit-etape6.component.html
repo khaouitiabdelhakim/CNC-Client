@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h2>Fiche de candidature CNC 2024</h2>
+    <form (drop)="onDrop($event)" (dragover)="onDragOver($event)" method="post" enctype="multipart/form-data" id="uploadForm">
+        <div class="form-inline mb-3">
+            <label for="documentCandidat" class="mr-2">Télécharger la Fiche de Candidature (PDF, JPG, JPEG, PNG)</label>
+            <br>
+            <div class="file-drop-zone" id="documentCandidatDropZone" style="width: 100%; height: 150px; border-radius: 30px; background-color: rgb(239, 255, 250);">
+                <input type="file" class="form-control-file" id="documentCandidat" name="documentCandidat" accept=".pdf, .jpg, .jpeg, .png" required>
+                <p>ou faites glisser et déposez ici</p>
+            </div>
+        </div>
+        <div class="form-inline mb-3">
+            <label for="cinLegalise" class="mr-2">Télécharger la CIN légalisée (PDF, JPG, JPEG, PNG)</label>
+            <br>
+            <div class="file-drop-zone" id="cinLegaliseDropZone" style="width: 100%; height: 150px; border-radius: 30px; background-color: rgb(239, 255, 250);">
+                <input type="file" class="form-control-file" id="cinLegalise" name="cinLegalise" accept=".pdf, .jpg, .jpeg, .png" required>
+                <p>ou faites glisser et déposez ici</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
+</div>

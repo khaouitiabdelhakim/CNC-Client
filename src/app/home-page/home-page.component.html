@@ -1,0 +1,66 @@
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+          data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">CNC 2024</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  
+    <!-- Hero -->
+    <div class="container" style="margin-top: 58px;">
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <img src="../../assets/images/logos/le-ministere-de-leducation-nationale.png" alt="Left Image" class="img-fluid img-50" style="height: 120px;">
+        </div>
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <img src="../../assets/images/logos/ensias.png"  alt="Right Image" class="img-fluid img-50" style="height: 80px;">
+        </div>
+      </div>
+    </div>
+    <div class="p-5 text-center" style="margin-top: 58px;">
+      <h1 class="mb-3">CNC 2024</h1>
+      <h4 class="mb-3">Concours National Commun</h4>
+      <h6 class="mb-3">d'admission dans les établissements de formation d'ingénieurs et établissements assimilés</h6>
+      <a class="btn btn-primary" href="authentication/login" role="button">Connectez-vous</a>
+    </div>
+    <!-- Hero -->
+  </header>
+
+  <div class="row">
+
+    <!-- Notice 1 -->
+    <div *ngFor="let notice of notices"  class="col-lg-3 col-sm-6">
+      <mat-card class="cool-card">
+        <mat-card-content class="cool-card-content">
+          <mat-card-title>CNC 2024</mat-card-title>
+          <div class="cool-card-details">
+            <h6 class="cool-card-subtitle">{{ notice.titre }}</h6>
+            <div class="cool-card-image">
+              <img src="http://localhost:8081/api/general/files/{{ notice.coverUrl }}" alt="PDF Icon" height="160px">
+            </div>
+            <div class="cool-card-download-button">
+              <!-- Add a click event to the button -->
+              <button class="cool-button" (click)="getPdfDownloadUrl(notice.pdfUrl )">Télécharger</button>
+
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+
+  
+

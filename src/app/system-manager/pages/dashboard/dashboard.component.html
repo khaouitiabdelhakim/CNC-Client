@@ -1,0 +1,31 @@
+<div class="row">
+  
+
+  
+
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-sm-6 col-lg-3" *ngFor="let productcard of notices">
+        <mat-card class="cardWithShadow productcard overflow-hidden">
+          <a routerLink="/widgets/cards">
+            <img
+              src="http://localhost:8081/api/general/files/{{ productcard.coverUrl }}"
+              alt="imgSrc"
+              class="w-100"
+              mat-card-image
+            />
+          </a>
+          <mat-card-content class="p-b-24 p-t-12 position-relative">
+          
+            <mat-card-title class="mat-headline-2 f-s-16 m-b-4">{{
+              productcard.titre
+            }}</mat-card-title>
+            
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+

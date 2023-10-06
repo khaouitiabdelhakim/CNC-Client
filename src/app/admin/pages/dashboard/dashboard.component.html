@@ -1,0 +1,174 @@
+<div class="row">
+  <!-- --------------------------------------------------------------------------- -->
+  <!-- Sales Overview -->
+  <!-- --------------------------------------------------------------------------- -->
+  <div class="col-lg-8">
+    <mat-card class="cardWithShadow">
+      <mat-card-content class="p-24">
+        <div class="d-flex w-100">
+          <mat-card-title>Candidats Inscrits au titre du CNC 2024</mat-card-title>
+          
+        </div>
+        <apx-chart
+          [series]="salesOverviewChart.series"
+          [dataLabels]="salesOverviewChart.dataLabels"
+          [chart]="salesOverviewChart.chart"
+          [legend]="salesOverviewChart.legend"
+          [xaxis]="salesOverviewChart.xaxis"
+          [yaxis]="salesOverviewChart.yaxis"
+          [grid]="salesOverviewChart.grid"
+          [stroke]="salesOverviewChart.stroke"
+          [tooltip]="salesOverviewChart.tooltip"
+          [plotOptions]="salesOverviewChart.plotOptions"
+        ></apx-chart>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="row">
+
+      <!--all users-->
+      <div class="col-lg-12 col-sm-6">
+        <mat-card class="cardWithShadow">
+          <mat-card-content class="p-24">
+            <mat-card-title>Utilisateurs</mat-card-title>
+            <div class="row m-t-24">
+              <div class="col-7">
+                <h4 class="mat-headline-5">36 358 utilisateurs</h4>
+                <div class="d-flex align-items-center m-t-16">
+                  <button
+                    mat-mini-fab
+                    class="bg-light-success text-success shadow-none icon-27"
+                  >
+                    <i-tabler name="arrow-up-right" class="icon-20"></i-tabler>
+                  </button>
+                  <div class="mat-body-1 f-w-600 m-l-12">+9%</div>
+                  <div class="mat-body-1 m-l-4">last year</div>
+                </div>
+
+                <div class="d-flex align-items-center m-t-32">
+                  <div class="d-flex align-items-center">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #fcba03;"
+                    ></i-tabler>
+
+                    <div class="mat-body-1 m-l-12">Etudiants</div>
+                  </div>
+                  <div class="d-flex align-items-center m-l-16">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #5afc03;"
+                    ></i-tabler>
+                    <div class="mat-body-1 m-l-12">Admins</div>
+                  </div>
+                  <div class="d-flex align-items-center m-l-16">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #03e8fc;"
+                    ></i-tabler>
+                    <div class="mat-body-1 m-l-12">Vérificateurs</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center m-t-32">
+                  <div class="d-flex align-items-center m-l-16">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #fc03f0;"
+                    ></i-tabler>
+                    <div class="mat-body-1 m-l-12">Gestionnaires</div>
+                  </div>
+                  <div class="d-flex align-items-center m-l-16">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #fc0330;"
+                    ></i-tabler>
+                    <div class="mat-body-1 m-l-12">Distributeurs</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-5 d-flex align-items-start">
+                <apx-chart
+                  [series]="generalChart.series"
+                  [dataLabels]="generalChart.dataLabels"
+                  [chart]="generalChart.chart"
+                  [legend]="generalChart.legend"
+                  [colors]="generalChart.colors"
+                  [stroke]="generalChart.stroke"
+                  [tooltip]="generalChart.tooltip"
+                  [plotOptions]="generalChart.plotOptions"
+                  [responsive]="generalChart.responsive"
+                ></apx-chart>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!--all students-->
+      <div class="col-lg-12 col-sm-6">
+        <mat-card class="cardWithShadow">
+          <mat-card-content class="p-24">
+            <mat-card-title>Candidats</mat-card-title>
+            <div class="row m-t-24">
+              <div class="col-7">
+                <h4 class="mat-headline-5">6 358</h4>
+                
+
+                <div class="d-flex align-items-center m-t-32">
+                  <div class="d-flex align-items-center">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #fcba03;"
+                    ></i-tabler>
+
+                    <div class="mat-body-1 m-l-12">Régulier</div>
+                  </div>
+                  <div class="d-flex align-items-center m-l-16">
+                    <i-tabler
+                      name="circle-filled"
+                      class=" icon-12 d-flex"
+                      style="color: #03e8fc;"
+                    ></i-tabler>
+                    <div class="mat-body-1 m-l-12">Libre</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-5 d-flex align-items-start">
+                <apx-chart
+                  [series]="studentsChart.series"
+                  [dataLabels]="studentsChart.dataLabels"
+                  [chart]="studentsChart.chart"
+                  [legend]="studentsChart.legend"
+                  [colors]="studentsChart.colors"
+                  [stroke]="studentsChart.stroke"
+                  [tooltip]="studentsChart.tooltip"
+                  [plotOptions]="studentsChart.plotOptions"
+                  [responsive]="studentsChart.responsive"
+                ></apx-chart>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+
+      
+    </div>
+  </div>
+  
+  
+
+  
+</div>
+
+
+
+

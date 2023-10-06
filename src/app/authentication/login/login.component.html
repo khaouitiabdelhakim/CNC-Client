@@ -1,0 +1,71 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
+  <div
+    class="position-relative row w-100 h-100 bg-gredient justify-content-center"
+  >
+    <div class="col-lg-4 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+          <div class="text-center">
+            <a [routerLink]="['/dashboard']">
+              <img
+                src="./assets/images/logos/dark-logo.png"
+                class="align-middle m-2"
+                alt="logo"
+                width="140px"
+              />
+            </a>
+          </div>
+
+          
+
+          <div class="or-border m-t-30">se connecter</div>
+
+          <div *ngIf="registrationError" class="error-message">
+            <p style="color: white; background-color: red; font-size: 12px; padding: 5px;
+            border-radius: 5px; margin-top: 20px;">{{ registrationError }}</p>
+          </div>
+
+          <form class="m-t-30" (ngSubmit)="signIn()">
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
+              >CIN</mat-label
+            >
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput name="cin" [(ngModel)]="user.cin" />
+            </mat-form-field>
+            <!-- password -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
+              >Mot De Passe</mat-label
+            >
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <input matInput type="password" name="password" [(ngModel)]="user.password" />
+            </mat-form-field>
+
+            <div class="d-flex align-items-center m-b-12">
+              <mat-checkbox color="primary">Sauvegarder Cet Appareil</mat-checkbox>
+              <a
+                [routerLink]="['/']"
+                class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14"
+                >Mot De Passe Oublié ?</a
+              >
+            </div>
+            <button type="submit" mat-flat-button color="primary" class="w-100" style="background-color: #fc0366;">
+              Se Connecter
+            </button>
+            <!-- input -->
+          </form>
+          <span class="d-block f-w-500 text-center m-t-24"
+            >J'ai pas un compte?
+
+            <a
+              [routerLink]="['/authentication/register']"
+              class="text-decoration-none text-primary f-w-500 f-s-14"
+            >
+              S'inscrire</a
+            >
+          </span>
+          
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
